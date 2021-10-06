@@ -41,7 +41,7 @@ def login(request):
       logged_user = user[0]
       if bcrypt.checkpw(request.POST['password'].encode(), logged_user.password.encode()):
         request.session['userid'] = logged_user.id
-        return redirect('/')
+        return redirect('/travels')
     return redirect('/')
 
 def logout(request):
